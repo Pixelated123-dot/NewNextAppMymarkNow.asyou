@@ -36,7 +36,7 @@ function Main() {
             />
 
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4 bg-black/40">
-                <Link href="/about">
+                <Link href="/about/main">
                     <div className="relative group cursor-pointer">
                         <Marquee gradient={false} speed={90} className="text-4xl md:text-6xl font-bold drop-shadow-lg relative z-10 overflow-hidden">
                             Welcome to MyMarkNow.asyou
