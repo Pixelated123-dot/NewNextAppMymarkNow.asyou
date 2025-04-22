@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Marquee from 'react-fast-marquee'
-import { useSpring, animated } from 'react-spring'
 
 const images = [
     '/Main1.jpg',
@@ -24,24 +23,6 @@ function Main() {
         }, 30000)
         return () => clearInterval(interval)
     }, [])
-
-    const animationProps = useSpring({
-        from: { opacity: 0, transform: 'translateY(40px) scale(0.5)' },
-        to: { opacity: 1, transform: 'translateY(0px) scale(1.2)' },
-        config: { tension: 170, friction: 26 },
-    });
-
-    const [spring, api] = useSpring(() => ({
-        opacity: 0,
-        transform: 'translateY(20px) scale(0.8)',
-        }));
-        
-        useEffect(() => {
-            api.start({
-            opacity: 1,
-            transform: 'translateY(0px) scale(1.2)',
-            });
-    }, []);
 
     return (
         <div className="relative w-full h-screen overflow-hidden">
@@ -64,9 +45,9 @@ function Main() {
                     </div>
                 </Link>
 
-                <animated.p style={animationProps} className="text-lg md:text-2xl mt-4 drop-shadow-md z-20 relative">
+                <p className="text-lg md:text-2xl mt-4 drop-shadow-md z-20 relative">
                     Your journey into creativity starts here. <br/> <strong>By Phuwanai Aphichitpongchai</strong>
-                </animated.p>
+                </p>
             </div>
 
             <style jsx>{`
